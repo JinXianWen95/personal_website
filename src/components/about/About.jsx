@@ -41,7 +41,7 @@ export const About = () => {
           </div>
           <p>
           Skilled, well-organized and passionated developer graduated with a Master's Degree in Computer Engineering.<br/>
-          I am currently working at Huawei as software developer and involved in developing applications based on microservice using Spring Framework.<br/> 
+          I have been worked at Huawei as software developer and involved in developing applications based on microservice using Spring Framework.<br/> 
           I also have woking experience on Big Data frameworks such as Flink, Spark and MapReduce. Furthermore I am attracted by different technology 
           fields such as Algorithms, Mathematical Programming and Computer Vision.
           </p>

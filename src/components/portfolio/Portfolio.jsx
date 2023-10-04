@@ -25,7 +25,7 @@ const data = [
     id: 3,
     image: tsp,
     title: 'TSP Cplex Solver',
-    github: 'https://github.com/JinXianWen95/TSP_CPLEX_SOLVER'
+    github: 'https://github.com/JinXianWen95/TspCplexSolver'
   },
 ]
 

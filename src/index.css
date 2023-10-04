@@ -28,6 +28,11 @@
 
 html {
     scroll-behavior: smooth;
+    background: url(../src/assets/images.jpg) no-repeat center center fixed;
+    /* background-image: url(../src/assets/images.jpg);
+    background-size: cover;
+    overflow: 'hidden';
+    background-position: 'center' */
 }
 
 ::-webkit-scrollbar {
@@ -39,7 +44,7 @@ body {
     background: var(--color-bg);
     color: var(--color-white);
     line-height: 1.7;
-    background-image: url(../src/assets/background-image.jpg);
+    
 }
 
 /* =============== GENERAL STYLES ================= */
