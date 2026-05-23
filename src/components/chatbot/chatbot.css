@@ -1,0 +1,174 @@
+.chatbot-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: auto;  /* Prevent parent container from squeezing the button */
+    height: auto; /* Prevent parent container from squeezing the button */
+    z-index: 99999 !important; /* Force this component to sit on the absolute top layer */
+    font-family: 'Poppins', sans-serif;
+}
+
+.chatbot-toggle {
+    width: 60px;
+    height: 60px;/* Container anchored to the bottom right of the screen */
+.chatbot-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999999;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem; /* Space between the button and the window */
+}
+
+/* The floating action button */
+.chatbot-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.chatbot-toggle:hover {
+    background-color: var(--color-white);
+    color: var(--color-bg);
+}
+
+/* The popup chat window */
+.chatbot-window {
+    width: 90vw;
+    max-width: 380px;
+    height: 75vh;
+    max-height: 550px;
+    background-color: var(--color-bg-variant);
+    border: 1px solid var(--color-primary-variant);
+    border-radius: 0.8rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideUp 0.3s ease-out forwards;
+}
+
+/* Header inside the popup */
+.chatbot-header {
+    background-color: var(--color-bg);
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-primary-variant);
+}
+
+.chatbot-header h4 {
+    color: var(--color-primary);
+    font-weight: 500;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Hugging Face embed */
+.chatbot-iframe {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+/* Smooth opening animation */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-bg);
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Slightly darker shadow to stand out against your background image */
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatbot-toggle:hover {
+    transform: scale(1.1);
+    background: var(--color-white);
+    color: var(--color-bg);
+}
+
+.chatbot-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 380px;
+    height: 550px;
+    background: var(--color-bg-variant);
+    border: 1px solid var(--color-primary-variant);
+    border-radius: 0.8rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 300ms ease-out;
+}
+
+.chatbot-header {
+    background: var(--color-bg);
+    color: var(--color-white);
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-primary-variant);
+}
+
+.chatbot-header h4 {
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.chatbot-window iframe {
+    flex: 1;
+    border: none;
+    background: transparent;
+}
+
+/* =================== MEDIA QUERIES (SMALL DEVICE) =======================*/
+@media screen and (max-width: 600px) {
+    .chatbot-container {
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    .chatbot-window {
+        width: calc(100vw - 2rem);
+        height: 60vh;
+        right: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(15px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
