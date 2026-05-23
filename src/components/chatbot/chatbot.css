@@ -1,11 +1,13 @@
 .chatbot-container {
     position: fixed;
-    bottom: 2rem;
+    bottom: 7rem; /* Lifted up from 2rem to clear the floating nav */
     right: 2rem;
-    width: auto;  /* Prevent parent container from squeezing the button */
-    height: auto; /* Prevent parent container from squeezing the button */
-    z-index: 99999 !important; /* Force this component to sit on the absolute top layer */
+    z-index: 999999; /* Keeps it on the very top layer */
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
 }
 
 .chatbot-toggle {
@@ -49,8 +51,8 @@
 .chatbot-window {
     width: 90vw;
     max-width: 380px;
-    height: 75vh;
-    max-height: 550px;
+    height: 60vh; /* Slightly reduced height so it doesn't hit the top header */
+    max-height: 500px;
     background-color: var(--color-bg-variant);
     border: 1px solid var(--color-primary-variant);
     border-radius: 0.8rem;
@@ -151,14 +153,13 @@
 /* =================== MEDIA QUERIES (SMALL DEVICE) =======================*/
 @media screen and (max-width: 600px) {
     .chatbot-container {
-        bottom: 1rem;
-        right: 1rem;
+        bottom: 6rem; /* Adjusts height on small screens */
+        right: 1rem;  /* Pushes closer to the edge to make room for nav */
     }
-
+    
     .chatbot-window {
-        width: calc(100vw - 2rem);
-        height: 60vh;
-        right: 0;
+        width: 95vw;
+        height: 65vh;
     }
 }
 
