@@ -9,6 +9,33 @@ export const Services = () => {
       <h2>Experiences</h2>
 
       <div className='container services__container'>
+        
+        {/* INTESA SANPAOLO */}
+        <article className='service'>
+          <div className='service__head'>
+            <h3>Intesa Sanpaolo</h3>
+          </div>
+
+          <ul className='service__list'>
+            <li>
+              <p>
+                Developed and scaled core Spring Boot microservices powering the bank's secure customer login infrastructure, directly owning code on the critical path of the authentication lifecycle. <br/>
+                Reengineered a mission-critical customer data streaming pipeline, successfully transitioning from a hybrid NiFi + Flink architecture to a high-throughput, fully Flink-based streaming solution.<br/>
+                Conducted extensive performance tuning using Java Flight Recorder (JFR) to optimize CPU, memory, and connection pools, significantly improving Transactions Per Second (TPS).
+                <div>
+                  <p>Java</p>
+                  <p>SpringBoot</p>
+                  <p>Apache Flink</p>
+                  <p>Apache Kafka</p>
+                  <p>JFR & VisualVM</p>
+                  <p>Microservices</p>
+                </div>
+              </p>
+            </li>
+          </ul>
+        </article>
+
+        {/* HUAWEI */}
         <article className='service'>
           <div className='service__head'>
             <h3>Huawei</h3>
@@ -36,6 +63,7 @@ export const Services = () => {
           </ul>
         </article>
 
+        {/* REPLY SRL */}
         <article className='service'>
           <div className='service__head'>
             <h3>Reply SRL</h3>
@@ -59,12 +87,11 @@ export const Services = () => {
                   <p>Jenkins</p>
                 </div>
               </p>
-              
             </li>
-            
           </ul>
         </article>
 
+        {/* UNIVERSITY OF PADUA */}
         <article className='service'>
           <div className='service__head'>
             <h3>University of Padua</h3>

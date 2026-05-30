@@ -1,12 +1,15 @@
 import React from 'react'
 import './experience.css'
-import {BsPatchCheckFill} from 'react-icons/bs'
-import {FaJava, FaReact} from 'react-icons/fa'
-import {SiPython, SiSpring, SiPostgresql, SiRedis, SiHibernate, SiCplusplus,
+import { FaJava } from 'react-icons/fa'
+import { BsCpu } from 'react-icons/bs' // Imported the valid CPU icon from Bootstrap icons
+import { 
+  SiPython, SiSpring, SiPostgresql, SiRedis, SiHibernate, SiCplusplus,
   SiOracle, SiApacheflink, SiApachehadoop, SiApachehive, SiIbm, SiHtml5,
-  SiCss3, SiBootstrap, SiReact} from 'react-icons/si'
-import {GrMysql, GrOracle} from 'react-icons/gr'
-import {DiSpark, DiJavascript} from 'react-icons/di'
+  SiCss3, SiBootstrap, SiReact, SiQuarkus, SiPytorch, SiGo 
+} from 'react-icons/si'
+import { GrMysql } from 'react-icons/gr'
+import { DiSpark, DiJavascript } from 'react-icons/di'
+import { GiArtificialIntelligence } from 'react-icons/gi'
 
 export const Experience = () => {
   return (
@@ -16,7 +19,8 @@ export const Experience = () => {
 
       <div className='container experience__container'>
 
-      <div className='exprience__backend'>
+        {/* BACKEND DEVELOPMENT */}
+        <div className='exprience__backend'>
           <h3>Backend Development</h3>
           <div className='experience__content'>
             <article className='experience__details'>
@@ -27,7 +31,25 @@ export const Experience = () => {
 
             <article className='experience__details'>
               <div>
+                <h4><SiGo/> Go (Golang)</h4>
+              </div>
+            </article>
+
+            <article className='experience__details'>
+              <div>
                 <h4><SiPython/> Python</h4>
+              </div>
+            </article>
+
+            <article className='experience__details'>
+              <div>
+                <h4><SiSpring/> Spring / Boot / Cloud</h4>
+              </div>
+            </article>
+
+            <article className='experience__details'>
+              <div>
+                <h4><SiQuarkus/> Quarkus</h4>
               </div>
             </article>
 
@@ -48,38 +70,49 @@ export const Experience = () => {
                 <h4><SiRedis/> Redis</h4>
               </div>
             </article>
-
-            <article className='experience__details'>
-              <div>
-                <h4><SiSpring/> Spring/ SpringBoot/ SpringCloud</h4>
-              </div>
-            </article>
-
           </div>
         </div>
 
-        
-        <div className='exprience__data'>
-          <h3>Data Development</h3>
+        {/* AI & MACHINE LEARNING */}
+        <div className='experience__ai'>
+          <h3>AI & Machine Learning</h3>
           <div className='experience__content'>
             <article className='experience__details'>
               <div>
-                <h4><GrMysql/> MySQL</h4>
+                <h4><SiPytorch/> PyTorch</h4>
               </div>
             </article>
 
             <article className='experience__details'>
               <div>
-                <h4><SiOracle/> Oracle SQL</h4>
+                <h4><GiArtificialIntelligence/> LLM Engineering</h4>
               </div>
             </article>
 
             <article className='experience__details'>
               <div>
-                <h4><SiPostgresql/> PostgresSQL</h4>
+                <h4><BsCpu/> RAG Architecture</h4>
               </div>
             </article>
 
+            <article className='experience__details'>
+              <div>
+                <h4><GiArtificialIntelligence/> QLoRA Fine-Tuning</h4>
+              </div>
+            </article>
+
+            <article className='experience__details'>
+              <div>
+                <h4><BsCpu/> AI Agents & NLP</h4>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        {/* DATA DEVELOPMENT */}
+        <div className='exprience__data'>
+          <h3>Data Development</h3>
+          <div className='experience__content'>
             <article className='experience__details'>
               <div>
                 <h4><SiApacheflink/> Flink</h4>
@@ -100,13 +133,25 @@ export const Experience = () => {
 
             <article className='experience__details'>
               <div>
-                <h4><SiApachehive/> Hive</h4>
+                <h4><SiPostgresql/> PostgresSQL</h4>
               </div>
             </article>
 
             <article className='experience__details'>
               <div>
-                <h4><GrOracle/> Oracle Golden Gate</h4>
+                <h4><GrMysql/> MySQL</h4>
+              </div>
+            </article>
+
+            <article className='experience__details'>
+              <div>
+                <h4><SiOracle/> Oracle SQL</h4>
+              </div>
+            </article>
+
+            <article className='experience__details'>
+              <div>
+                <h4><SiApachehive/> Hive</h4>
               </div>
             </article>
 
@@ -118,7 +163,7 @@ export const Experience = () => {
           </div>
         </div>
 
-
+        {/* FRONTEND DEVELOPMENT */}
         <div className='exprience__frontend'>
           <h3>Frontend Development</h3>
           <div className='experience__content'>
@@ -154,9 +199,6 @@ export const Experience = () => {
           </div>
         </div>
 
-        {/* END OF FRONTEND*/}
-
-        
       </div>
     </section>
   )
