@@ -1,6 +1,43 @@
-import React from 'react'
 import './services.css'
-import {BiCheck} from 'react-icons/bi'
+
+const services = [
+  {
+    id: 'intesa',
+    company: 'Intesa Sanpaolo',
+    title: 'Software Engineer',
+    duration: 'Nov 2023 - Present',
+    location: 'Turin, Italy',
+    description: 'Own backend development and code design on the critical path of the bank\'s secure authentication lifecycle, supporting highly resilient services used by millions of active users. Reengineered a core customer data delivery pipeline from a hybrid legacy setup into a fully decoupled and fault-tolerant Apache Flink streaming architecture. Performed deep-dive performance profiling using Java Flight Recorder (JFR) and VisualVM to eliminate microservice bottlenecks in memory allocation and database connection pools. Implemented Horizontal Pod Autoscaling (HPA) to dynamically scale Kubernetes workloads, improving service scalability and Transactions Per Second (TPS).',
+    stack: ['Java', 'Spring Boot', 'Apache Flink', 'Apache Kafka', 'Kubernetes', 'HPA', 'JFR', 'VisualVM', 'Oracle SQL'],
+  },
+  {
+    id: 'huawei',
+    company: 'Huawei',
+    title: 'Software Engineer',
+    duration: 'Mar 2023 - Aug 2023',
+    location: 'Dongguan, China',
+    description: 'Developed and maintained core backend systems for CodeArts Pipeline, a visual platform for automated software delivery and task scheduling. Engineered a background tracking and analytics engine to collect, process, and visualize real-time build, cloud testing, and deployment pipeline statistics across the software development lifecycle.',
+    stack: ['Spring Boot', 'RabbitMQ', 'Redis', 'MyBatis', 'PostgreSQL', 'MySQL'],
+  },
+  {
+    id: 'reply',
+    company: 'Technology Reply',
+    title: 'Technical Consultant (Data Engineer)',
+    duration: 'Jan 2021 - Dec 2022',
+    location: 'Padua, Italy',
+    description: 'Designed and implemented a real-time mainframe data migration pipeline using Change Data Capture (CDC), Apache Flink, and Apache Kafka for a major Italian banking group (Intesa Sanpaolo) supporting PSD2 Open Banking requirements. Reduced historical database footprints and accelerated relational database query performance by approximately 30% compared with the legacy DB2 architecture.',
+    stack: ['Apache Flink', 'Apache Kafka', 'IBM CDC', 'Oracle SQL', 'Spring Boot', 'Hibernate', 'Maven', 'GitLab', 'Jenkins'],
+  },
+  {
+    id: 'uni',
+    company: 'University of Padua',
+    title: 'Research & Academic Projects',
+    duration: '2018 - 2020',
+    location: 'Padua, Italy',
+    description: 'Master\'s thesis: k-Center Clustering under Doubling Dimension (Java & Hadoop MapReduce, coreset approach). Additional projects: TSP Optimization Engine (C & CPLEX), Teaching Platform Web Application.',
+    stack: ['Big Data', 'MapReduce', 'Clustering', 'CPLEX', 'Java', 'Web Dev'],
+  },
+]
 
 export const Services = () => {
   return (
@@ -9,107 +46,29 @@ export const Services = () => {
       <h2>Experiences</h2>
 
       <div className='container services__container'>
-        
-        {/* INTESA SANPAOLO */}
-        <article className='service'>
-          <div className='service__head'>
-            <h3>Intesa Sanpaolo</h3>
-          </div>
-
-          <ul className='service__list'>
-            <li>
-              <p>
-                Developed and scaled core Spring Boot microservices powering the bank's secure customer login infrastructure, directly owning code on the critical path of the authentication lifecycle. <br/>
-                Reengineered a mission-critical customer data streaming pipeline, successfully transitioning from a hybrid NiFi + Flink architecture to a high-throughput, fully Flink-based streaming solution.<br/>
-                Conducted extensive performance tuning using Java Flight Recorder (JFR) to optimize CPU, memory, and connection pools, significantly improving Transactions Per Second (TPS).
-                <div>
-                  <p>Java</p>
-                  <p>SpringBoot</p>
-                  <p>Apache Flink</p>
-                  <p>Apache Kafka</p>
-                  <p>JFR & VisualVM</p>
-                  <p>Microservices</p>
-                </div>
-              </p>
-            </li>
-          </ul>
-        </article>
-
-        {/* HUAWEI */}
-        <article className='service'>
-          <div className='service__head'>
-            <h3>Huawei</h3>
-          </div>
-
-          <ul className='service__list'>
-            <li>
-              <p>
-                I was the Software developer and mainly responsible of collecting CodeArts pipeline statistics.
-                The CodeArts Pipeline is essentially a visual automated task scheduling platform, 
-                which needs to be used in conjunction with the automated tasks of compilation and build, code check, cloud testing,
-                deployment and other services in the software development cycle.<br/>
-                My main contribution was to collect the execution statistics of pipeline in real-time
-                and provide them to front-end team, therefore the users know quickly the state of their software.
-                <div>
-                  <p>SpringBoot</p>
-                  <p>RabbitMQ</p>
-                  <p>Redis</p>
-                  <p>Mybatis</p>
-                  <p>PostgreSQL</p>
-                  <p>MySQL</p>
-                </div>
-              </p>
-            </li>
-          </ul>
-        </article>
-
-        {/* REPLY SRL */}
-        <article className='service'>
-          <div className='service__head'>
-            <h3>Reply SRL</h3>
-          </div>
-
-          <ul className='service__list'>
-            <li>
-              <p>
-                I have been responsible for design and implementation of offloading pipeline made of change data capture tool from mainframe, event streaming platform and relational
-                database for a main Italian banking group to address PSD2 regulation and open banking challenge. <br/>
-                As result the data on Oracle Database is much compact and faster to retrieve compared to DB2 Database. It has been observed an improvement of 30% in select query speed.
-                Furthermore it provides additional information such as the history of account balance.
-                <div>
-                  <p>Apache Flink</p>
-                  <p>Apache Kafka</p>
-                  <p>CDC</p>
-                  <p>Oracle SQL</p>
-                  <p>Ververica</p>
-                  <p>Maven</p>
-                  <p>GitLab</p>
-                  <p>Jenkins</p>
-                </div>
-              </p>
-            </li>
-          </ul>
-        </article>
-
-        {/* UNIVERSITY OF PADUA */}
-        <article className='service'>
-          <div className='service__head'>
-            <h3>University of Padua</h3>
-          </div>
-
-          <ul className='service__list'>
-            <li>
-              <p>
-              During my university journey I have been focusing on Big Data technology and algorithm efficiency. Furthermore I have been part of different projects
-              and have collaborated with a lot brilliant mates.<br/>
-              I have implemented the Traveler Salesman Problem Solver using IBM ILOG CPLEX Optimization Studio at the Operational Research course.<br/>
-              Enjoyed the team work with the realization of Teaching Platform Web Application. <br/>
-              Concluded the Master with a thesis analyzing and improving k-Center Clustering with MapReduce Algorithm.
-              </p>
-            </li>
-          </ul>
-        </article>
-
+        {services.map((service) => (
+          <article key={service.id} className='service hologram'>
+            <div className='service__head'>
+              <div className='service__head-decoration'>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <h3>{service.company}</h3>
+              <small className='service__meta'>{service.title} · {service.duration} · {service.location}</small>
+            </div>
+            <div className='service__body'>
+              <p className='service__description'>{service.description}</p>
+              <div className='service__stack'>
+                {service.stack.map((tech) => (
+                  <span key={tech} className='service__tech-tag' data-tech={tech}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   )

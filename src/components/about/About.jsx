@@ -5,49 +5,52 @@ import {RiAwardFill} from 'react-icons/ri'
 import {FiUsers} from 'react-icons/fi'
 import {TbFolderFilled} from 'react-icons/tb'
 
-
 export const About = () => {
   return (
     <section id='about'>
       <h5>Get to Know</h5>
       <h2>About Me</h2>
-    
+
       <div className='container about__container'>
-        <div className='about__me'>
+        <div className='about__me hologram'>
           <div className='about__me-image'>
-            <img src={ME} alt='About Image' />
+            <img src={ME} alt='Jin Xianwen' loading="lazy" />
+            <div className="about__image-glitch"></div>
           </div>
         </div>
 
         <div className='about__content'>
           <div className='about__cards'>
-            <article className='about__card'>
+            <article className='about__card hologram'>
               <RiAwardFill className='about_icon'/>
               <h5>Experience</h5>
-              <small>3+ Years Working</small>
+              <small>5+ Years</small>
             </article>
 
-            <article className='about__card'>
+            <article className='about__card hologram'>
               <FiUsers className='about_icon'/>
               <h5>Companies</h5>
-              <small>2</small>
+              <small>3</small>
             </article>
 
-            <article className='about__card'>
+            <article className='about__card hologram'>
               <TbFolderFilled className='about_icon'/>
               <h5>Projects</h5>
-              <small>4 completed</small>
+              <small>3+</small>
             </article>
           </div>
-          <p>
-          Skilled, well-organized and passionated developer graduated with a Master's Degree in Computer Engineering.<br/>
-          I have been worked at Huawei as software developer and involved in developing applications based on microservice using Spring Framework.<br/> 
-          I also have working experience on Big Data frameworks such as Flink, Spark and MapReduce. Furthermore I am attracted by different technology 
-          fields such as Algorithms, Mathematical Programming and Computer Vision.
+          <p className="about__description">
+            Software & Data Engineer with 5+ years of professional experience.<br/>
+            Master's Degree in Computer Engineering from University of Padua.<br/>
+            Currently Software Engineer at Intesa Sanpaolo on secure authentication systems and Flink streaming pipelines.<br/>
+            Previous: Software Engineer at Huawei (CodeArts Pipeline) and Technical Consultant at Technology Reply (mainframe-to-cloud migration).<br/>
+            Expertise in Java, Spring Boot, Apache Flink, Apache Kafka, IBM CDC, Kubernetes, Oracle SQL, and real-time distributed systems.
           </p>
-          <a href='#contact' className='btn btn-primary'>Let's Talk</a>
+          <a href='#contact' className='btn btn-primary terminal-prompt'>
+            <span className="terminal-prompt__symbol">&gt;</span>
+            <span className="terminal-prompt__text">Let's Talk</span>
+          </a>
         </div>
-
       </div>
     </section>
   )

@@ -5,41 +5,49 @@ import {BiUser} from 'react-icons/bi'
 import {BiBookBookmark} from 'react-icons/bi'
 import {RiServiceLine} from 'react-icons/ri'
 import {TiContacts} from 'react-icons/ti'
-import {useState} from 'react'
-import { NavHashLink } from 'react-router-hash-link';
 
 export const Nav = () => {
-  const [activeNav, setActiveNav] = useState('#')
+  const [activeNav, setActiveNav] = React.useState('#')
+  const [isExpanded, setIsExpanded] = React.useState(false)
+
+  const navItems = [
+    { path: '#', label: 'Home', icon: <BiHomeSmile /> },
+    { path: '#about', label: 'About', icon: <BiUser /> },
+    { path: '#experience', label: 'Skills', icon: <BiBookBookmark /> },
+    { path: '#services', label: 'Projects', icon: <RiServiceLine /> },
+    { path: '#contact', label: 'Contact', icon: <TiContacts /> },
+  ]
+
   return (
-//     <nav>
-//       <NavHashLink
-//         className="navHash"
-//         to="#"
-//         activeClassName="active"><BiHomeSmile />
-//       </NavHashLink>
-//       <NavHashLink
-//         to="#about"
-//         activeClassName="active"><BiUser />
-//       </NavHashLink>
-//       <NavHashLink
-//         to="#experience"
-//         activeClassName="active"><BiBookBookmark />
-//       </NavHashLink>
-//       <NavHashLink
-//         to="#services"
-//         activeClassName="active"><RiServiceLine />
-//       </NavHashLink>
-//       <NavHashLink
-//         to="#contact"
-//         activeClassName="active"><TiContacts />
-//       </NavHashLink>
-// </nav>
-    <nav>
-      <a href='#' onClick={() => setActiveNav('#')} className={activeNav === '#' ? 'active' : ''}><BiHomeSmile /></a>
-      <a href='#about' onClick={() => setActiveNav('#about')} className={activeNav === '#about' ? 'active' : ''}><BiUser /></a>
-      <a href='#experience' onClick={() => setActiveNav('#experience')} className={activeNav === '#experience' ? 'active' : ''}><BiBookBookmark /></a>
-      <a href='#services' onClick={() => setActiveNav('#services')} className={activeNav === '#services' ? 'active' : ''}><RiServiceLine /></a>
-      <a href='#contact' onClick={() => setActiveNav('#contact')} className={activeNav === '#contact' ? 'active' : ''}><TiContacts /></a>
+    <nav className={isExpanded ? 'nav-expanded' : ''}>
+      {navItems.map(item => (
+        <a
+          key={item.path}
+          href={item.path}
+          onClick={() => {
+            setActiveNav(item.path)
+            setIsExpanded(false)
+          }}
+          className={activeNav === item.path ? 'active' : ''}
+          title={item.label}
+          aria-label={item.label}
+        >
+          {item.icon}
+          <span className="nav__label">{item.label}</span>
+        </a>
+      ))}
+      <button
+        className="nav__toggle"
+        onClick={() => setIsExpanded(!isExpanded)}
+        aria-label="Toggle navigation"
+        title="Toggle menu"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
     </nav>
   )
 }

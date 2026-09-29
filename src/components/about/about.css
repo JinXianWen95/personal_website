@@ -1,111 +1,218 @@
 .about__container {
     display: grid;
-    grid-template-columns: 35% 50%;
-    gap: 15%;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
 }
 
 .about__me {
     width: 100%;
     aspect-ratio: 1/1;
-    border-radius: 2rem;
-    background: linear-gradient(
-        45deg, 
-        transparent,
-        var(--color-primary),
-        transparent
-        );
+    border-radius: 1.5rem;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), transparent);
     display: grid;
     place-items: center;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 60px rgba(0, 255, 255, 0.15), 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.about__me::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 1.8rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-primary));
+    z-index: -1;
+    opacity: 0.5;
+    filter: blur(20px);
+    animation: neonBorder 4s ease-in-out infinite;
+}
+
+@keyframes neonBorder {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.01); }
 }
 
 .about__me-image {
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     overflow: hidden;
-    transform: rotate(10deg);
+    transform: rotate(5deg);
     transition: var(--transition);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
 .about__me-image:hover {
     transform: rotate(0);
 }
 
+.about__me-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Glitch effect on image */
+.about__image-glitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0;
+    animation: glitch-flicker 0.15s infinite;
+}
+
+@keyframes glitch-flicker {
+    0% { opacity: 0; transform: translateX(0); }
+    10% { opacity: 0.05; transform: translateX(-2px); }
+    20% { opacity: 0; transform: translateX(0); }
+    100% { opacity: 0; }
+}
+
+.about__content h3 {
+    font-size: 1.5rem;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    font-family: var(--font-primary);
+}
+
 .about__cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .about__card {
     background: var(--color-bg-variant);
-    border: 1px solid transparent;
+    border: 1px solid var(--color-border);
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 1.8rem 1rem;
     text-align: center;
     transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.about__card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-primary-variant), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .about__card:hover {
-    background: transparent;
-    border-color: var(--color-primary-variant);
-    cursor: default;
+    background: rgba(0, 255, 255, 0.05);
+    border-color: var(--color-primary);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 255, 255, 0.3), 0 0 0 1px var(--color-primary);
+}
+
+.about__card:hover::before {
+    opacity: 0.2;
 }
 
 .about__icon {
     color: var(--color-primary);
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+    transition: var(--transition);
+}
+
+.about__card:hover .about__icon {
+    color: var(--color-secondary);
+    transform: scale(1.2) rotate(5deg);
 }
 
 .about__card h5 {
     font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+    font-family: var(--font-primary);
 }
 
 .about__card small {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: var(--color-light);
+    font-family: var(--font-mono);
 }
 
-.about__content p {
-    margin: 2rem 0 2.6rem;
+.about__description {
+    margin: 1.5rem 0;
     color: var(--color-light);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    font-family: var(--font-secondary);
 }
 
-/* =================== MEDIA QUERIES (MEDIUM DEVICE) =======================*/
+.about__content .btn {
+    margin-top: 1rem;
+}
 
-@media screen and (max-width:1024px) {
+/* Terminal prompt button */
+.terminal-prompt {
+    font-family: var(--font-mono) !important;
+    padding: 1rem 1.5rem !important;
+    border-radius: 0.5rem !important;
+    overflow: visible !important;
+}
+
+.terminal-prompt__symbol {
+    color: var(--color-primary);
+    margin-right: 0.5rem;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+@media screen and (max-width: 1024px) {
     .about__container {
         grid-template-columns: 1fr;
-        gap: 0;
+        gap: 2rem;
     }
-    
     .about__me {
-        width: 50%;
-        margin: 2rem auto 4rem;
+        max-width: 300px;
+        margin: 0 auto;
     }
-
-    .about__content p {
-        margin: 1rem 0 1.5rem;
-    }
-}
-
-/* =================== MEDIA QUERIES (SMALL DEVICE) =======================*/
-
-@media screen and (max-width:600px) {
-    .about_me {
-        width: 65%;
-        margin: 0 auto 3rem;
-    }
-
-    .about__cards {
-        grid-template-columns: 1fr 1fr;
-        grid-area: 1rem;
-    }
-
     .about__content {
         text-align: center;
     }
+    .about__description {
+        margin: 1rem 0;
+    }
+    .about__cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 
-    .about__content p {
-        margin: 1.5rem 0;
+@media screen and (max-width: 600px) {
+    .about__me-image {
+        transform: rotate(0);
+    }
+    .about__me-image:hover {
+        transform: rotate(0);
+    }
+    .about__cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .about__card {
+        padding: 1.3rem 0.75rem;
     }
 }
