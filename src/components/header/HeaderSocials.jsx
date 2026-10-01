@@ -29,7 +29,7 @@ const HeaderSocials = () => {
       </a>
 
       <a
-        href="https://instagram.com"
+        href="https://instagram.com/xwjin95"
         target="_blank"
         rel="noopener noreferrer"
         className="social-icon"

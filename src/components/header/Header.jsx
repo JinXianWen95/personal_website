@@ -15,7 +15,7 @@ const CODE_LINES = [
   '  engineer.improve();',
   '}',
   '',
-  '// 5+ yrs | Java, Spring, Flink, Kafka, Kubernetes, Python',
+  '// 5+ yrs | Java, Go, Python, Spring, Flink, Kafka, K8s, Docker, ML',
 ]
 
 const TYPING_SPEED = 35

@@ -4,6 +4,7 @@ import './experience.css'
 import { FaJava } from 'react-icons/fa'
 import {
   SiPython,
+  SiJavascript,
   SiSpring,
   SiPostgresql,
   SiRedis,
@@ -18,8 +19,10 @@ import {
   SiCss3,
   SiGo,
   SiKubernetes,
+  SiReact,
   SiApachekafka,
-  SiPytorch
+  SiPytorch,
+  SiDocker
 } from 'react-icons/si'
 import { GrMysql } from 'react-icons/gr'
 
@@ -54,14 +57,20 @@ const categories = [
     skills: [
       [SiKubernetes, 'Kubernetes'],
       [SiPytorch, 'PyTorch'],
-      [SiPython, 'LLM Engineering / RAG']
+      [SiDocker, 'Docker'],
+      [null, 'LLM Engineering'],
+      [null, 'RAG Architecture'],
+      [null, 'QLoRA Fine-Tuning'],
+      [null, 'AI Agents & NLP']
     ]
   },
   {
     title: 'Web',
     skills: [
       [SiHtml5, 'HTML'],
-      [SiCss3, 'CSS']
+      [SiCss3, 'CSS'],
+      [SiJavascript, 'JavaScript'],
+      [SiReact, 'React']
     ]
   }
 ]
@@ -79,11 +88,15 @@ const Experience = () => {
 
             <div className="experience__content">
               {skills.map(([Icon, name]) => (
-                <article className="experience__skill" key={name}>
-                  <div className="experience__icon">
-                    <Icon />
-                  </div>
-
+                <article
+                  className={`experience__skill ${Icon ? '' : 'experience__skill--text-only'}`}
+                  key={name}
+                >
+                  {Icon && (
+                    <div className="experience__icon">
+                      <Icon />
+                    </div>
+                  )}
                   <h4>{name}</h4>
                 </article>
               ))}

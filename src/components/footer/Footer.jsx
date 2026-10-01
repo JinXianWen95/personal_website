@@ -1,8 +1,8 @@
 import React from 'react'
 import './footer.css'
-import {FaFacebookF} from 'react-icons/fa'
-import {FiInstagram} from 'react-icons/fi'
-import {FaLinkedin} from 'react-icons/fa'
+import { FaFacebookF } from 'react-icons/fa'
+import { FiInstagram } from 'react-icons/fi'
+import { FaLinkedin } from 'react-icons/fa'
 
 export const Footer = () => {
   return (
@@ -15,7 +15,7 @@ export const Footer = () => {
         <li><button onClick={() => window.location.hash = '#'}>Home</button></li>
         <li><button onClick={() => window.location.hash = '#about'}>About</button></li>
         <li><button onClick={() => window.location.hash = '#experience'}>Skills</button></li>
-        <li><button onClick={() => window.location.hash = '#services'}>Projects</button></li>
+        <li><button onClick={() => window.location.hash = '#services'}>Experiences</button></li>
         <li><button onClick={() => window.location.hash = '#portfolio'}>Portfolio</button></li>
         <li><button onClick={() => window.location.hash = '#contact'}>Contact</button></li>
       </ul>

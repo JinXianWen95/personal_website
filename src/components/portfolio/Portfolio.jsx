@@ -10,15 +10,15 @@ const data = [
     image: websiteIcon,
     title: 'Personal Website',
     github: 'https://github.com/JinXianWen95/personal_website',
-    description: 'A futuristic portfolio website built with React, featuring a holographic design system with animated backgrounds, typewriter effects, and an AI-powered career assistant chatbot.',
-    stack: ['React', 'CSS', 'AI Chatbot'],
+    description: 'Full React portfolio with a custom holographic design system, real-time AI career assistant via OpenRouter API, and an EmailJS contact form. Demonstrates modern frontend architecture, component design, and third-party API integration.',
+    stack: ['React', 'CSS3', 'OpenRouter API', 'EmailJS'],
   },
   {
     id: 2,
     image: remytutor,
     title: 'Teaching Platform RemyTutor',
     github: 'https://github.com/JinXianWen95/RemyTutor',
-    description: 'A collaborative web-based teaching platform developed during the Master\'s program, enabling students to book tutoring sessions, manage course materials, and track progress.',
+    description: 'Collaborative teaching platform for booking tutoring sessions, managing course materials, and tracking student progress. Built with Java Spring Boot backend and JavaScript frontend during Master\'s program.',
     stack: ['Java', 'Spring Boot', 'JavaScript'],
   },
   {
@@ -26,7 +26,7 @@ const data = [
     image: tsp,
     title: 'TSP Optimization Engine',
     github: 'https://github.com/JinXianWen95/TspCplexSolver',
-    description: 'Traveling Salesman Problem solver using IBM ILOG CPLEX Optimization Studio. Implemented Linear Integer Programming models and metaheuristics including 2-opt, Local Branching, and Variable Neighborhood Search.',
+    description: 'Traveling Salesman Problem solver built with IBM ILOG CPLEX Optimization Studio. Implemented exact Linear Integer Programming models alongside metaheuristics — 2-opt, Local Branching, and Variable Neighborhood Search — to compare exact and heuristic solution quality at scale.',
     stack: ['C', 'CPLEX', 'Algorithms'],
   },
 ]

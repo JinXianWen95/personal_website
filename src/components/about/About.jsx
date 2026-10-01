@@ -40,11 +40,11 @@ export const About = () => {
             </article>
           </div>
           <p className="about__description">
-            Software & Data Engineer with 5+ years of professional experience.<br/>
-            Master's Degree in Computer Engineering from University of Padua.<br/>
-            Currently Software Engineer at Intesa Sanpaolo on secure authentication systems and Flink streaming pipelines.<br/>
-            Previous: Software Engineer at Huawei (CodeArts Pipeline) and Technical Consultant at Technology Reply (mainframe-to-cloud migration).<br/>
-            Expertise in Java, Spring Boot, Apache Flink, Apache Kafka, IBM CDC, Kubernetes, Oracle SQL, and real-time distributed systems.
+            Software & Data Engineer with 5+ years of professional experience building reliable, scalable backend and streaming systems.<br/>
+            MSc in Computer Engineering from the University of Padua.<br/>
+            Currently a Software Engineer at Intesa Sanpaolo, developing secure authentication services on Flink streaming pipelines that serve millions of active users.<br/>
+            Previously at Huawei on the CodeArts Pipeline platform and at Technology Reply on CDC-based mainframe-to-cloud migration for PSD2 open banking.<br/>
+            Specializes in Java, Spring Boot, Apache Flink, Apache Kafka, IBM CDC, Kubernetes, Oracle SQL, and real-time distributed systems.
           </p>
           <a href='#contact' className='btn btn-primary terminal-prompt'>
             <span className="terminal-prompt__symbol">&gt;</span>
